@@ -14,6 +14,7 @@ const Tab = createBottomTabNavigator();
 
 const tabOptions = {
   showLabel: false,
+  headerShown: false,
   activeBackgroundColor: COLORS.white,
   inactiveBackgroundColor: Utils.rgba(COLORS.gray, 0.2),
   style: {
@@ -86,7 +87,7 @@ const Tabs = ({ navigation, route }) => {
       })}
       tabBarOptions={tabOptions}
     >
-      <Tab.Screen name="Home" component={Home} />
+      <Tab.Screen name="Home" component={Home} headerShown={false}/>
       <Tab.Screen name="Events" component={Events} />
       <Tab.Screen
         name="NewPost"
@@ -100,3 +101,4 @@ const Tabs = ({ navigation, route }) => {
 };
 
 export default Tabs;
+

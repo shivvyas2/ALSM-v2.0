@@ -101,10 +101,13 @@ export default () => {
         />
         {/* tabs */}
         <Stack.Screen
-          name="Home"
-          component={Tabs}
-          options={(props) => tabsOptions(props)}
-        />
+        name="Home"
+        component={Tabs}
+        options={(props) => ({
+          ...tabsOptions(props),
+          headerShown: false,
+        })}
+      />
         <Stack.Screen
           name="Notifications"
           component={Notifications}
@@ -289,3 +292,4 @@ export default () => {
     </NavigationContainer>
   );
 };
+
